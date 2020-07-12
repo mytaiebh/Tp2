@@ -6,9 +6,11 @@ from kivy.graphics.vertex_instructions import Rectangle, Line
 from kivy.properties import ListProperty, BooleanProperty, NumericProperty
 from kivy.uix.floatlayout import FloatLayout
 
-from generalcommands import interpolate
+#from generalcommands import interpolate
 
 from kivy.lang.builder import Builder
+
+from screenAlbum.interpolate import Interpolate
 
 Builder.load_string("""
 <Curves>:
@@ -192,14 +194,30 @@ class Curves(FloatLayout):
             else:
                 next_distance = distance
                 next_y = None
+            interpolate = Interpolate(start_y, stop_y, distance, 0, total_bytes)
             if interpolation == 'Catmull-Rom':
-                ys = interpolate(start_y, stop_y, distance, 0, total_bytes, before=previous_y, before_distance=previous_distance, after=next_y, after_distance=next_distance, mode='catmull')
+                interpolate.set_before(previous_y)
+                interpolate.set_before_distance(previous_distance)
+                interpolate.set_after(next_y)
+                interpolate.set_after_distance(next_distance)
+                interpolate.set_mode('catmull')
+                ys = interpolate.interpolate_method()
+                #ys = interpolate(start_y, stop_y, distance, 0, total_bytes, before=previous_y, before_distance=previous_distance, after=next_y, after_distance=next_distance, mode='catmull')
             elif interpolation == 'Cubic':
-                ys = interpolate(start_y, stop_y, distance, 0, total_bytes, before=previous_y, before_distance=previous_distance, after=next_y, after_distance=next_distance, mode='cubic')
+                interpolate.set_before(previous_y)
+                interpolate.set_before_distance(previous_distance)
+                interpolate.set_after(next_y)
+                interpolate.set_after_distance(next_distance)
+                interpolate.set_mode('Cubic')
+                ys = interpolate.interpolate_method()
+                #ys = interpolate(start_y, stop_y, distance, 0, total_bytes, before=previous_y, before_distance=previous_distance, after=next_y, after_distance=next_distance, mode='cubic')
             elif interpolation == 'Cosine':
-                ys = interpolate(start_y, stop_y, distance, 0, total_bytes, mode='cosine')
+                interpolate.set_mode('cosine')
+                ys = interpolate.interpolate_method()
+                #ys = interpolate(start_y, stop_y, distance, 0, total_bytes, mode='cosine')
             else:
-                ys = interpolate(start_y, stop_y, distance, 0, total_bytes)
+                ys = interpolate.interpolate_method()
+                #ys = interpolate(start_y, stop_y, distance, 0, total_bytes)
             self.curve = self.curve + ys
             x = stop_x
             index = index + 1
