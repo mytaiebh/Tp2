@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c18f69a3-776f-4dd6-998c-4d459ba95fe2" name="Default Changelist" comment="">
+    <list default="true" id="c18f69a3-776f-4dd6-998c-4d459ba95fe2" name="Default Changelist" comment="update ignore file">
+      <change afterPath="$PROJECT_DIR$/screens/mpegCommand.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gomp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gomp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TreeViewItem/TreeViewItemCountries.py" beforeDir="false" afterPath="$PROJECT_DIR$/TreeViewItem/TreeViewItemCountries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/ScreenImporting.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/ScreenImporting.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_geolocalisation.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_geolocalisation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/screenAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/screenAlbum.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,9 +107,6 @@
     </expand>
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="gompAppPy" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -100,13 +116,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="$PROJECT_DIR$/.idea" />
-      </set>
-    </option>
   </component>
   <component name="ProjectId" id="1aFv43iY9XvwGcy326fFFgwyD1g" />
   <component name="ProjectLevelVcsManager">
@@ -122,6 +131,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -140,7 +150,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -166,7 +176,16 @@
       <recent name="$PROJECT_DIR$/tests/models" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.mpegCommand">
+    <configuration default="true" type="js.build_tools.gulp">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -213,6 +232,9 @@
       <module name="gomp" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -228,13 +250,23 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="js.build_tools.gulp">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
+    <configuration name="mpegCommand" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="gomp" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/screens" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\harounit\PycharmProjects\Tp2\screens\mpegCommand" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="UnitTest" type="tests" factoryName="Unittests">
@@ -264,21 +296,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_buttons&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_buttons.ButtonTestCase" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="gomp" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_buttons.ButtonTestCase&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -354,6 +371,7 @@
       <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
@@ -396,22 +414,22 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python tests.UnitTest" />
       <item itemvalue="Python tests.Unittests in test_geolocalisation.py" />
       <item itemvalue="Python tests.button unit test" />
-      <item itemvalue="Python tests.UnitTest" />
-      <item itemvalue="Python tests.Unittests in tests" />
-      <item itemvalue="Python tests.Unittests for test_buttons.ButtonTestCase" />
-      <item itemvalue="Python tests.Unittests for test_buttons.ButtonTestCase.test_Vertical_button" />
       <item itemvalue="Python tests.Unittests for test_buttons" />
-      <item itemvalue="Python.main" />
+      <item itemvalue="Python tests.Unittests for test_buttons.ButtonTestCase.test_Vertical_button" />
+      <item itemvalue="Python tests.Unittests in tests" />
+      <item itemvalue="Python.mpegCommand" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mpegCommand" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python tests.Unittests in tests" />
         <item itemvalue="Python tests.Unittests for test_buttons" />
         <item itemvalue="Python tests.Unittests for test_buttons.ButtonTestCase.test_Vertical_button" />
-        <item itemvalue="Python tests.Unittests for test_buttons.ButtonTestCase" />
       </list>
     </recent_temporary>
   </component>
@@ -554,13 +572,19 @@
             </State>
           </value>
         </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
       </map>
     </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="1" value="TOOL_WINDOW" />
+      </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -575,11 +599,16 @@
     <option name="LAST_COMMIT_MESSAGE" value="update ignore file" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="434" y="193" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588177201502">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="412" y="141" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594500145270">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="412" y="141" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1594500145270" />
     <state x="1160" y="-949" key="#com.intellij.fileTypes.FileTypeChooser/0.22.1440.878/-1019.-878.1600.878/581.-1178.1920.1178@581.-1178.1920.1178" timestamp="1586352028323" />
     <state x="434" y="193" key="#com.intellij.fileTypes.FileTypeChooser/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@0.23.1440.877" timestamp="1588177201502" />
+    <state x="488" y="79" key="#com.intellij.ide.util.MemberChooser" timestamp="1594506174201">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="79" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1594506174201" />
     <state x="301" y="168" key="CommitChangelistDialog2" timestamp="1588177324048">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -645,9 +674,14 @@
     <state width="1878" height="277" key="GridCell.Tab.1.right/0.23.1920.1177/-1440.323.1440.877@0.23.1920.1177" timestamp="1588173450490" />
     <state width="1878" height="277" key="GridCell.Tab.1.right/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@1440.-277.1920.1177" timestamp="1588167577842" />
     <state width="1878" height="485" key="GridCell.Tab.1.right/1440.-277.1920.1177/0.23.1440.877/-1600.-47.1600.877@1440.-277.1920.1177" timestamp="1588799024820" />
-    <state x="352" y="178" key="SettingsEditor" timestamp="1588711057320">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="491" y="66" key="RollbackChangesDialog" timestamp="1594500783342">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="491" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1594500783342" />
+    <state x="334" y="17" key="SettingsEditor" timestamp="1594490740854">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="334" y="17" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1594490740854" />
     <state x="1050" y="-950" key="SettingsEditor/0.22.1440.878/-1019.-878.1600.878/581.-1178.1920.1178@581.-1178.1920.1178" timestamp="1587218711206" />
     <state x="469" y="251" key="SettingsEditor/0.23.1920.1177/-1440.323.1440.877@0.23.1920.1177" timestamp="1588170233303" />
     <state x="1909" y="-49" key="SettingsEditor/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@1440.-277.1920.1177" timestamp="1588164928722" />
@@ -660,17 +694,19 @@
       <screen x="1440" y="-277" width="1920" height="1177" />
     </state>
     <state x="1540" y="-177" width="1720" height="977" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@1440.-277.1920.1177" timestamp="1588165924324" />
-    <state x="2083" y="-200" width="902" height="709" key="find.popup" timestamp="1588798888464">
-      <screen x="1440" y="-277" width="1920" height="1177" />
+    <state x="457" y="48" width="642" height="534" key="find.popup" timestamp="1594502624104">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="457" y="48" width="642" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1594502624104" />
     <state x="1204" y="-943" width="673" height="708" key="find.popup/0.22.1440.878/-1019.-878.1600.878/581.-1178.1920.1178@581.-1178.1920.1178" timestamp="1587218451932" />
     <state x="623" y="258" width="673" height="708" key="find.popup/0.23.1920.1177/-1440.323.1440.877@0.23.1920.1177" timestamp="1588173022160" />
     <state x="467" y="198" width="676" height="528" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@0.23.1440.877" timestamp="1588177978520" />
     <state x="2063" y="-42" width="673" height="708" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@1440.-277.1920.1177" timestamp="1588168006831" />
     <state x="2083" y="-200" width="902" height="709" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-47.1600.877@1440.-277.1920.1177" timestamp="1588798888464" />
-    <state x="1206" y="-913" width="670" height="676" key="search.everywhere.popup" timestamp="1586370374138">
-      <screen x="581" y="-1178" width="1920" height="1178" />
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup" timestamp="1594500378193">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594500378193" />
     <state x="1206" y="-913" width="670" height="676" key="search.everywhere.popup/0.22.1440.878/-1019.-878.1600.878/581.-1178.1920.1178@581.-1178.1920.1178" timestamp="1586370374138" />
   </component>
   <component name="XDebuggerManager">
@@ -703,17 +739,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>941</line>
+          <line>800</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1408</line>
+          <line>1267</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1688</line>
+          <line>1547</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -728,7 +764,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1732</line>
+          <line>1591</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -808,7 +844,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1135</line>
+          <line>994</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -863,27 +899,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>934</line>
+          <line>793</line>
           <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1973</line>
+          <line>1845</line>
           <option name="timeStamp" value="204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>2011</line>
+          <line>1883</line>
           <option name="timeStamp" value="205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>2072</line>
+          <line>1944</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>2083</line>
+          <line>1955</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1033,22 +1069,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1561</line>
+          <line>1420</line>
           <option name="timeStamp" value="555" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1575</line>
+          <line>1434</line>
           <option name="timeStamp" value="556" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1563</line>
+          <line>1422</line>
           <option name="timeStamp" value="559" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1654</line>
+          <line>1513</line>
           <option name="timeStamp" value="567" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1063,7 +1099,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1270</line>
+          <line>1129</line>
           <option name="timeStamp" value="574" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1073,7 +1109,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1272</line>
+          <line>1131</line>
           <option name="timeStamp" value="593" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1083,7 +1119,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>927</line>
+          <line>786</line>
           <option name="timeStamp" value="596" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1239,81 +1275,5 @@
         <watch expression="len(self.selected)" language="Python" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_fileInfo_TestFileInfo_test_load_gps.coverage" NAME="Unittests for test_fileInfo.TestFileInfo.test_load_gps Coverage Results" MODIFIED="1569867185548" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/models" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_input_py.coverage" NAME="Unittests in test_input.py Coverage Results" MODIFIED="1588170329459" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_screenDatabase_TestScreenDatabase_test_update_gps.coverage" NAME="Unittests for test_screenDatabase.TestScreenDatabase.test_update_gps Coverage Results" MODIFIED="1573832851405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/screens" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_fileInfo_TestFileInfo_test_photoInfo.coverage" NAME="Unittests for test_fileInfo.TestFileInfo.test_photoInfo Coverage Results" MODIFIED="1569771744875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_input_InputTestCase_test_FloadInput.coverage" NAME="Unittests for test_input.InputTestCase.test_FloadInput Coverage Results" MODIFIED="1568922029042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_album_detail_py.coverage" NAME="Unittests in test_album_detail.py Coverage Results" MODIFIED="1568839363647" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$UnitTest.coverage" NAME="UnitTest Coverage Results" MODIFIED="1569418041974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_PhotoManagerApp_py.coverage" NAME="Unittests in test_PhotoManagerApp.py Coverage Results" MODIFIED="1588168453408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_database.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_database Coverage Results" MODIFIED="1569272007780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Doctests_in_tests.coverage" NAME="Doctests in tests Coverage Results" MODIFIED="1568810138343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_google_photo_py.coverage" NAME="Unittests in test_google_photo.py Coverage Results" MODIFIED="1588170237761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/test_google_api" />
-    <SUITE FILE_PATH="coverage/gompAppPy$pytest_geolocalisation.coverage" NAME="pytest geolocalisation Coverage Results" MODIFIED="1568818563634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_album_detail_MyTestCase_test_runtouchapp.coverage" NAME="Unittests for test_album_detail.MyTestCase.test_runtouchapp Coverage Results" MODIFIED="1568839821663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_ScreenImportPreset_ScreenImportPresetTestCase_test_ScreenImportPreset.coverage" NAME="Unittests for test_ScreenImportPreset.ScreenImportPresetTestCase.test_ScreenImportPreset Coverage Results" MODIFIED="1569439885744" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_tests_test_buttons_ButtonTestCase_test_remove_button.coverage" NAME="Unittests for tests.test_buttons.ButtonTestCase.test_remove_button Coverage Results" MODIFIED="1569418713927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_label_py.coverage" NAME="Unittests in test_label.py Coverage Results" MODIFIED="1588170335456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_importing.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_importing Coverage Results" MODIFIED="1569272302746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_google_photo_test_google_photo_test_list_albums.coverage" NAME="Unittests for test_google_photo.test_google_photo.test_list_albums Coverage Results" MODIFIED="1588170261960" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/test_google_api" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_buttons.coverage" NAME="Unittests for test_buttons Coverage Results" MODIFIED="1588173245099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_label_LabelTestCase_test_InfoLabel.coverage" NAME="Unittests for test_label.LabelTestCase.test_InfoLabel Coverage Results" MODIFIED="1568926052769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gomp$main.coverage" NAME="main Coverage Results" MODIFIED="1568572666299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_import.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_import Coverage Results" MODIFIED="1588168242021" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_theme.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_theme Coverage Results" MODIFIED="1569272468624" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_models.coverage" NAME="Unittests in test_models Coverage Results" MODIFIED="1588171407155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/test_models" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_export.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_export Coverage Results" MODIFIED="1569272146377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_buttons_ButtonTestCase_test_remove_button.coverage" NAME="Unittests for test_buttons.ButtonTestCase.test_remove_button Coverage Results" MODIFIED="1569419750661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_album.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_album Coverage Results" MODIFIED="1569271421685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_image_py.coverage" NAME="Unittests in test_image.py Coverage Results" MODIFIED="1588170294858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_creation_date_from_full_filename_TestCreation_date_from_full_filename.coverage" NAME="Unittests for test_creation_date_from_full_filename.TestCreation_date_from_full_filename Coverage Results" MODIFIED="1588169469634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_tests.coverage" NAME="Unittests in tests Coverage Results" MODIFIED="1588173407821" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_google_photo_test_google_photo_test_getPeoples.coverage" NAME="Unittests for test_google_photo.test_google_photo.test_getPeoples Coverage Results" MODIFIED="1587219132642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/google" />
-    <SUITE FILE_PATH="coverage/gompAppPy$pytest_in_tests.coverage" NAME="pytest in tests Coverage Results" MODIFIED="1568836361129" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_album_detail_MyTestCase_test_theme.coverage" NAME="Unittests for test_album_detail.MyTestCase.test_theme Coverage Results" MODIFIED="1568840700065" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_geolocalisation_py.coverage" NAME="Unittests in test_geolocalisation.py Coverage Results" MODIFIED="1569500352752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_ScreenImportPreset_py.coverage" NAME="Unittests in test_ScreenImportPreset.py Coverage Results" MODIFIED="1588168442558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_dropDown_ButtonTestCase.coverage" NAME="Unittests for test_dropDown.ButtonTestCase Coverage Results" MODIFIED="1588169496125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_label_LabelTestCase_test_NormalLabel.coverage" NAME="Unittests for test_label.LabelTestCase.test_NormalLabel Coverage Results" MODIFIED="1568925192121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_album_detail_MyTestCase_test_render.coverage" NAME="Unittests for test_album_detail.MyTestCase.test_render Coverage Results" MODIFIED="1568839871305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_buttons_ButtonTestCase_test_WideButton.coverage" NAME="Unittests for test_buttons.ButtonTestCase.test_WideButton Coverage Results" MODIFIED="1569420407865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_buttons_ButtonTestCase_test_explandable_base.coverage" NAME="Unittests for test_buttons.ButtonTestCase.test_explandable_base Coverage Results" MODIFIED="1569419763930" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_ScreenImportPreset_ScreenImportPresetTestCase.coverage" NAME="Unittests for test_ScreenImportPreset.ScreenImportPresetTestCase Coverage Results" MODIFIED="1588166188521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_buttons_ButtonTestCase.coverage" NAME="Unittests for test_buttons.ButtonTestCase Coverage Results" MODIFIED="1588172809231" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_dropDown.coverage" NAME="Unittests for test_dropDown Coverage Results" MODIFIED="1568923469936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_buttons_ButtonTestCase_test_Vertical_button.coverage" NAME="Unittests for test_buttons.ButtonTestCase.test_Vertical_button Coverage Results" MODIFIED="1588172931115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_collage.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_collage Coverage Results" MODIFIED="1569271887276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_input_InputTestCase_test_IntegerInput.coverage" NAME="Unittests for test_input.InputTestCase.test_IntegerInput Coverage Results" MODIFIED="1568922195675" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_screenImporting_TestScreenImporting.coverage" NAME="Unittests for test_screenImporting.TestScreenImporting Coverage Results" MODIFIED="1571339739676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_creation_date_from_full_filename_TestCreation_date_from_full_filename_test_creation_date_from_full_filename.coverage" NAME="Unittests for test_creation_date_from_full_filename.TestCreation_date_from_full_filename.test_creation_date_from_full_filename Coverage Results" MODIFIED="1588165697422" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_album_detail_MyTestCase.coverage" NAME="Unittests for test_album_detail.MyTestCase Coverage Results" MODIFIED="1568839431128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_input_InputTestCase_test_NormalInput.coverage" NAME="Unittests for test_input.InputTestCase.test_NormalInput Coverage Results" MODIFIED="1568922910131" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$main.coverage" NAME="main Coverage Results" MODIFIED="1588798916594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_label_LabelTestCase_test_ShortLabel.coverage" NAME="Unittests for test_label.LabelTestCase.test_ShortLabel Coverage Results" MODIFIED="1568925415041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_Locations_TestFileInfo_test_insert_location.coverage" NAME="Unittests for Locations.TestFileInfo.test_insert_location Coverage Results" MODIFIED="1569869548637" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/models" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_Locations_TestFileInfo_test_sqlalchemy.coverage" NAME="Unittests for Locations.TestFileInfo.test_sqlalchemy Coverage Results" MODIFIED="1587218086145" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/models" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_in_test_creation_date_from_full_filename_py.coverage" NAME="Unittests in test_creation_date_from_full_filename.py Coverage Results" MODIFIED="1587218138871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_fileInfo_TestFileInfo_test_photoInfo_original_date.coverage" NAME="Unittests for test_fileInfo.TestFileInfo.test_photoInfo_original_date Coverage Results" MODIFIED="1569774277925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/models" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_database_restore.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_database_restore Coverage Results" MODIFIED="1569272048955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_ScreenImportPreset_TestScreenImportPreset_test_ScreenImportPreset.coverage" NAME="Unittests for test_ScreenImportPreset.TestScreenImportPreset.test_ScreenImportPreset Coverage Results" MODIFIED="1588167577823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase Coverage Results" MODIFIED="1588172198238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_show_transfer.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_show_transfer Coverage Results" MODIFIED="1569418012216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_Locations_TestFileInfo.coverage" NAME="Unittests for Locations.TestFileInfo Coverage Results" MODIFIED="1588172186283" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/test_models" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_PhotoManagerApp_PhotoManagerTestCase_test_PhotoManager.coverage" NAME="Unittests for test_PhotoManagerApp.PhotoManagerTestCase.test_PhotoManager Coverage Results" MODIFIED="1569016293339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_album_detail_MyTestCase_test_screenCollage.coverage" NAME="Unittests for test_album_detail.MyTestCase.test_screenCollage Coverage Results" MODIFIED="1568840477668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gomp$Unittests_for_test_main_MyTest_test.coverage" NAME="Unittests for test_main.MyTest.test Coverage Results" MODIFIED="1568392128945" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_input_InputTestCase_test_FloadInput2.coverage" NAME="Unittests for test_input.InputTestCase.test_FloadInput2 Coverage Results" MODIFIED="1568922085521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_label_LabelTestCase_test_PhotoThumbLabel.coverage" NAME="Unittests for test_label.LabelTestCase.test_PhotoThumbLabel Coverage Results" MODIFIED="1568925278729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_dropDown_ButtonTestCase_test_AlbumSortDropDown.coverage" NAME="Unittests for test_dropDown.ButtonTestCase.test_AlbumSortDropDown Coverage Results" MODIFIED="1568923069423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_album_detail_MyTestCase_test_screen_database.coverage" NAME="Unittests for test_album_detail.MyTestCase.test_screen_database Coverage Results" MODIFIED="1568838674058" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_input_TestInput.coverage" NAME="Unittests for test_input.TestInput Coverage Results" MODIFIED="1588167299079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gomp$pytest_in_bin.coverage" NAME="pytest in bin Coverage Results" MODIFIED="1568568167625" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$button_unit_test.coverage" NAME="button unit test Coverage Results" MODIFIED="1569418850279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Nosetests_in_tests.coverage" NAME="Nosetests in tests Coverage Results" MODIFIED="1568810197575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/gompAppPy$Unittests_for_test_buttons_ButtonTestCase_test_TootleBase.coverage" NAME="Unittests for test_buttons.ButtonTestCase.test_TootleBase Coverage Results" MODIFIED="1588172776069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/gompAppPy$pytest_for_test_album_detail_test_album_detail.coverage" NAME="pytest for test_album_detail.test_album_detail Coverage Results" MODIFIED="1568837686181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

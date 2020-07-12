@@ -14,12 +14,9 @@ from screenAlbum.TagSelectButton import TagSelectButton
 from screenAlbum.VideoViewer import VideoViewer
 from screenAlbum.editBorderImage import EditBorderImage
 from screenAlbum.editColorImage import EditColorImage
-from generalElements.splitters.SplitterPanelRight import SplitterPanelRight
-from screenAlbum.PanelTabs import PanelTabs
-from generalElements.scrollers.ScrollerContainer import ScrollerContainer
-from screenAlbum.EditPanelContainer import  EditPanelContainer
-from generalElements.buttons.VerticalButton import VerticalButton
-from generalElements.photos.PhotoRecycleViewButton import PhotoRecycleViewButton
+from screens.mpegCommand import MpegCommand
+
+
 try:
     import numpy
     import cv2
@@ -318,6 +315,9 @@ Builder.load_string("""
 """)
 
 
+
+
+
 class ScreenAlbum(Screen):
     """Screen layout of the album viewer."""
 
@@ -516,131 +516,6 @@ class ScreenAlbum(Screen):
         command = 'ffmpeg -i "'+video_file+'"'+seek+' -i "'+audio_file+'" -map 0:v -map 1:a -codec copy '+audio_codec_settings+' '+audio_bitrate_settings+' -shortest "'+output_file+'"'
         return [True, command, output_filename]
 
-    def get_ffmpeg_command(self, input_folder, input_filename, output_file_folder, input_size, noaudio=False, input_images=False, input_file=None, input_framerate=None, input_pixel_format=None, encoding_settings=None, start=None, duration=None):
-        if not encoding_settings:
-            encoding_settings = self.encoding_settings
-        if encoding_settings['file_format'].lower() == 'auto':
-            file_format = 'MP4'
-            pixels_number = input_size[0] * input_size[1]
-            video_bitrate = str(pixels_number / 250)
-            video_codec = 'libx264'
-            audio_codec = 'aac'
-            audio_bitrate = '192'
-            encoding_speed = 'fast'
-            deinterlace = False
-            resize = False
-            resize_width = input_size[0]
-            resize_height = input_size[1]
-            encoding_command = ''
-            extension = 'mp4'
-        else:
-            file_format = containers[containers_friendly.index(encoding_settings['file_format'])]
-            video_codec = video_codecs[video_codecs_friendly.index(encoding_settings['video_codec'])]
-            audio_codec = audio_codecs[audio_codecs_friendly.index(encoding_settings['audio_codec'])]
-            video_bitrate = encoding_settings['video_bitrate']
-            audio_bitrate = encoding_settings['audio_bitrate']
-            encoding_speed = encoding_settings['encoding_speed'].lower()
-            deinterlace = encoding_settings['deinterlace']
-            resize = encoding_settings['resize']
-            resize_width = encoding_settings['width']
-            resize_height = encoding_settings['height']
-            encoding_command = encoding_settings['command_line']
-            extension = containers_extensions[containers.index(file_format)]
-
-        if start is not None:
-            seek = ' -ss '+str(start)
-        else:
-            seek = ''
-        if duration is not None:
-            duration = ' -t '+str(duration)
-        else:
-            duration = ''
-        if not input_file:
-            input_file = input_folder+os.path.sep+input_filename
-        if input_framerate:
-            output_framerate = self.new_framerate(video_codec, input_framerate)
-        else:
-            output_framerate = False
-        if output_framerate:
-            framerate_setting = "-r "+str(output_framerate[0] / output_framerate[1])
-        else:
-            framerate_setting = ""
-        if input_images:
-            input_format_settings = '-f image2pipe -vcodec mjpeg ' + framerate_setting
-        else:
-            input_format_settings = ''
-        if input_pixel_format:
-            output_pixel_format = self.new_pixel_format(video_codec, input_pixel_format)
-        else:
-            output_pixel_format = False
-        if output_pixel_format:
-            pixel_format_setting = "-pix_fmt "+str(output_pixel_format)
-        else:
-            pixel_format_setting = ""
-
-        if video_codec == 'libx264':
-            speed_setting = "-preset "+encoding_speed
-        else:
-            speed_setting = ''
-
-        video_bitrate_settings = "-b:v "+video_bitrate+"k"
-        if not noaudio:
-            audio_bitrate_settings = "-b:a "+audio_bitrate+"k"
-            audio_codec_settings = "-c:a " + audio_codec + " -strict -2"
-        else:
-            audio_bitrate_settings = ''
-            audio_codec_settings = ''
-        video_codec_settings = "-c:v "+video_codec
-        file_format_settings = "-f "+file_format
-
-        if resize and (input_size[0] > int(resize_width) or input_size[1] > int(resize_height)):
-            resize_settings = 'scale='+resize_width+":"+resize_height
-        else:
-            resize_settings = ''
-        if deinterlace:
-            deinterlace_settings = "yadif"
-        else:
-            deinterlace_settings = ""
-        if deinterlace_settings or resize_settings:
-            filter_settings = ' -vf "'
-            if deinterlace_settings:
-                filter_settings = filter_settings+deinterlace_settings
-                if resize_settings:
-                    filter_settings = filter_settings+', '+resize_settings
-            else:
-                filter_settings = filter_settings+resize_settings
-            filter_settings = filter_settings+'" '
-        else:
-            filter_settings = ""
-
-        if encoding_command:
-            #check if encoding command is valid
-
-            if '%i' not in encoding_command:
-                return [False, 'Input file must be specified', '']
-            if '%c' not in encoding_command:
-                extension = ''
-                if '-f' in encoding_command:
-                    detect_format = encoding_command[encoding_command.find('-f')+2:].strip().split(' ')[0].lower()
-                    supported_formats = fftools.get_fmts(output=True)
-                    if detect_format in supported_formats[0]:
-                        format_index = supported_formats[0].index(detect_format)
-                        extension_list = supported_formats[2][format_index]
-                        if extension_list:
-                            extension = extension_list[0]
-                if not extension:
-                    return [False, 'Could not determine ffmpeg container format.', '']
-            output_filename = os.path.splitext(input_filename)[0]+'.'+extension
-            output_file = output_file_folder+os.path.sep+output_filename
-            input_settings = ' -i "'+input_file+'" '
-            encoding_command_reformat = encoding_command.replace('%c', file_format_settings).replace('%v', video_codec_settings).replace('%a', audio_codec_settings).replace('%f', framerate_setting).replace('%p', pixel_format_setting).replace('%b', video_bitrate_settings).replace('%d', audio_bitrate_settings).replace('%i', input_settings).replace('%%', '%')
-            command = 'ffmpeg'+seek+' '+input_format_settings+encoding_command_reformat+duration+' "'+output_file+'"'
-        else:
-            output_filename = os.path.splitext(input_filename)[0]+'.'+extension
-            output_file = output_file_folder+os.path.sep+output_filename
-            #command = 'ffmpeg '+file_format_settings+' -i "'+input_file+'"'+filter_settings+' -sn '+speed_setting+' '+video_codec_settings+' '+audio_codec_settings+' '+framerate_setting+' '+pixel_format_setting+' '+video_bitrate_settings+' '+audio_bitrate_settings+' "'+output_file+'"'
-            command = 'ffmpeg'+seek+' '+input_format_settings+' -i "'+input_file+'" '+file_format_settings+' '+filter_settings+' -sn '+speed_setting+' '+video_codec_settings+' '+audio_codec_settings+' '+framerate_setting+' '+pixel_format_setting+' '+video_bitrate_settings+' '+audio_bitrate_settings+duration+' "'+output_file+'"'
-        return [True, command, output_filename]
 
     def encode_process(self):
         """Uses ffmpeg command line to reencode the current video file to a new format."""
@@ -670,7 +545,18 @@ class ScreenAlbum(Screen):
         input_size = input_metadata['src_vid_size']
         input_file_folder, input_filename = os.path.split(input_file)
         output_file_folder = input_file_folder+os.path.sep+'reencode'
-        command_valid, command, output_filename = self.get_ffmpeg_command(input_file_folder, input_filename, output_file_folder, input_size, input_framerate=framerate, input_pixel_format=pixel_format, start=start_seconds, duration=duration_seconds)
+        #changment
+        mpegCommand = MpegCommand()
+        mpegCommand.set_input_folder(input_file_folder)
+        mpegCommand.set_input_filename(input_filename)
+        mpegCommand.set_output_file_folder(output_file_folder)
+        mpegCommand.set_input_size(input_size)
+        mpegCommand.set_input_framerate(framerate)
+        mpegCommand.set_input_pixel_format(pixel_format)
+        mpegCommand.set_start(start_seconds)
+        mpegCommand.set_duration(duration_seconds)
+
+        command_valid, command, output_filename = mpegCommand.ffmpeg_command()
         if not command_valid:
             self.cancel_encode()
             self.dismiss_popup()
@@ -830,33 +716,6 @@ class ScreenAlbum(Screen):
                 if elapsed > timeout:
                     return False
         return True
-
-    def new_framerate(self, codec, framerate):
-        """Given the old framerate, determine what the closest supported framerate for the current video codec is.
-        Argument:
-            framerate: 2-Tuple, frame rate numerator, and denominator
-        Returns: 2-Tuple, frame rate numerator, and denominator
-        """
-
-        framerates = fftools.get_supported_framerates(codec_name=codec, rate=framerate)
-        if framerates:
-            return framerates[0]
-        else:
-            #all framerates supported, just return the given one
-            return framerate
-
-    def new_pixel_format(self, codec, pixel_format):
-        """Given the old pixel format, determine what the closest supported format for the current video codec is.
-        Argument:
-            pixel_format: String, a pixel format name
-        Returns: String, a pixel format name, or False if none found.
-        """
-
-        available_pixel_formats = fftools.get_supported_pixfmts(codec_name=codec, pix_fmt=pixel_format)
-        if available_pixel_formats:
-            return available_pixel_formats[0]
-        else:
-            return False
 
     def on_sort_reverse(self, *_):
         """Updates the sort reverse button's state variable, since kivy doesnt just use True/False for button states."""
@@ -1809,7 +1668,20 @@ class ScreenAlbum(Screen):
         duration = edit_image.length
         self.total_frames = (duration * (end_point - start_point)) * (framerate[0] / framerate[1])
         start_frame = int(self.total_frames * start_point)
-        command_valid, command, output_filename = self.get_ffmpeg_command(input_file_folder, input_filename, output_file_folder, input_size, noaudio=True, input_file='-', input_images=True, input_framerate=framerate, input_pixel_format=pixel_format, encoding_settings=encoding_settings)
+        #change
+        mpegCommand = MpegCommand()
+        mpegCommand.set_input_folder(input_file_folder)
+        mpegCommand.set_input_filename(input_filename)
+        mpegCommand.set_output_file_folder(output_file_folder)
+        mpegCommand.set_input_size(input_size)
+        mpegCommand.set_noaudio(True)
+        mpegCommand.set_input_file('-')
+        mpegCommand.set_input_images(True)
+        mpegCommand.set_input_framerate(framerate)
+        mpegCommand.set_input_pixel_format(pixel_format)
+        mpegCommand.set_encoding_settings(encoding_settings)
+        command_valid, command, output_filename = mpegCommand.ffmpeg_command()
+        ######################################################################
         if not command_valid:
             self.failed_encode('Command not valid: '+command)
             return
@@ -2093,5 +1965,3 @@ class ScreenAlbum(Screen):
         self.show_selected()
 
         app.message("Saved edits to image")
-
-
