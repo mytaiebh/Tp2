@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18f69a3-776f-4dd6-998c-4d459ba95fe2" name="Default Changelist" comment="update ignore file">
+      <change afterPath="$PROJECT_DIR$/screens/imageCollage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenAlbum/Curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/screenAlbum/Curves.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenAlbum/interpolate.py" beforeDir="false" afterPath="$PROJECT_DIR$/screenAlbum/interpolate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/screencollage.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/screencollage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -700,10 +700,10 @@
     <state x="467" y="198" width="676" height="528" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@0.23.1440.877" timestamp="1588177978520" />
     <state x="2063" y="-42" width="673" height="708" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@1440.-277.1920.1177" timestamp="1588168006831" />
     <state x="2083" y="-200" width="902" height="709" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-47.1600.877@1440.-277.1920.1177" timestamp="1588798888464" />
-    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup" timestamp="1594521825666">
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup" timestamp="1594525369969">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594521825666" />
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594525369969" />
     <state x="1206" y="-913" width="670" height="676" key="search.everywhere.popup/0.22.1440.878/-1019.-878.1600.878/581.-1178.1920.1178@581.-1178.1920.1178" timestamp="1586370374138" />
   </component>
   <component name="XDebuggerManager">
@@ -1248,11 +1248,6 @@
           <url>file://$PROJECT_DIR$/TreeViewItem/TreeViewItemCountries.py</url>
           <line>24</line>
           <option name="timeStamp" value="812" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/screens/screencollage.py</url>
-          <line>403</line>
-          <option name="timeStamp" value="813" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

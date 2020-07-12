@@ -4,7 +4,7 @@ import math
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.uix.screenmanager import Screen
-from kivy.properties import ObjectProperty, StringProperty, ListProperty, BooleanProperty, NumericProperty
+from kivy.properties import ObjectProperty, StringProperty, ListProperty, BooleanProperty
 from filebrowser import FileBrowser
 
 from generalcommands import to_bool
@@ -20,8 +20,9 @@ from screenCollage.AddRemoveDropDown import AddRemoveDropDown
 from screenCollage.ColorDropDown import ColorDropDown
 from screenCollage.ExpotAspectratioDropDown import ExportAspectRatioDropDown
 from screenCollage.ResolutionDropDown import ResolutionDropDown
-from screenCollage.ScatterImage import ScatterImage
-from generalElements.photos.StencilViewTouch import StencilViewTouch
+#from screenCollage.ScatterImage import ScatterImage
+#from generalElements.photos.StencilViewTouch import StencilViewTouch
+from screens.imageCollage import ImageCollage
 
 Builder.load_string("""
 <ScreenCollage>:
@@ -149,12 +150,11 @@ Builder.load_string("""
 """)
 
 
-class ScreenCollage(Screen):
+class ScreenCollage(Screen, ImageCollage):
     sort_reverse_button = StringProperty('normal')
-    images = []
     collage_background = ListProperty([0, 0, 0, 1])
     resolution = StringProperty('Medium')
-    aspect = NumericProperty(1.3333)
+    #aspect = NumericProperty(1.3333)
     aspect_text = StringProperty('4:3')
     filename = StringProperty('')
     export_scale = 1
@@ -174,11 +174,9 @@ class ScreenCollage(Screen):
     photos = []  #Photoinfo of all photos in the album
     sort_method = StringProperty('Name')  #Current album sort method
     sort_reverse = BooleanProperty(False)
+    add_collage = {}
 
-    def deselect_images(self):
-        collage = self.ids['collageHolder']
-        for image in collage.children:
-            image.selected = False
+
 
     def delete_selected(self):
         collage = self.ids['collageHolder']
@@ -245,7 +243,14 @@ class ScreenCollage(Screen):
                 lowmem = True
             else:
                 lowmem = False
-            self.add_collage_image(collage, photo[0], position, size=size, angle=rand_angle, lowmem=lowmem)
+            self.collage_ = collage
+            self.fullpath_ = photo[0]
+            self.position_ = position
+            self.size_ = size
+            self.angle_ = rand_angle
+            self.lowmem_ = lowmem
+
+            self.add_collage_image()
 
     def export(self):
         self.deselect_images()
@@ -397,9 +402,13 @@ class ScreenCollage(Screen):
 
         collage = self.ids['collageHolder']
         position = collage.to_widget(*position)
-        self.add_collage_image(collage, fullpath, position, aspect=aspect)
+        self.collage_ = collage
+        self.fullpath_ = fullpath
+        self.position_ = position
+        self.aspect = aspect
+        self.add_collage_image()
 
-    def add_collage_image(self, collage, fullpath, position, size=0.5, angle=0, lowmem=False, aspect=1):
+    '''def add_collage_image(self, collage, fullpath, position, size=0.5, angle=0, lowmem=False, aspect=1):
         if not lowmem:
             if len(self.images) > 8:
                 lowmem = True
@@ -433,7 +442,7 @@ class ScreenCollage(Screen):
                 image_holder.height = width / aspect
             self.images.append(image_holder)
             image_holder.pos = (position[0] - (width * size / 2), position[1] - (width * size / 2))
-            collage.add_widget(image_holder)
+            collage.add_widget(image_holder)'''
 
     def show_selected(self):
         """Scrolls the treeview to the currently selected folder"""
@@ -628,6 +637,7 @@ class ScreenCollage(Screen):
         """Called when the screen is entered.  Set up variables and widgets, and prepare to view images."""
 
         app = App.get_running_app()
+
         self.ids['leftpanel'].width = app.left_panel_width()
         self.ids['moveButton'].state = 'down'
         self.ids['rotateButton'].state = 'normal'
@@ -649,3 +659,4 @@ class ScreenCollage(Screen):
         #refresh views
         self.refresh_photolist()
         self.refresh_photoview()
+
