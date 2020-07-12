@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18f69a3-776f-4dd6-998c-4d459ba95fe2" name="Default Changelist" comment="update ignore file">
-      <change afterPath="$PROJECT_DIR$/screenAlbum/interpolate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screenAlbum/Curves.py" beforeDir="false" afterPath="$PROJECT_DIR$/screenAlbum/Curves.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenAlbum/interpolate.py" beforeDir="false" afterPath="$PROJECT_DIR$/screenAlbum/interpolate.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
