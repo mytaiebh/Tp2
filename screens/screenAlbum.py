@@ -14,6 +14,7 @@ from screenAlbum.TagSelectButton import TagSelectButton
 from screenAlbum.VideoViewer import VideoViewer
 from screenAlbum.editBorderImage import EditBorderImage
 from screenAlbum.editColorImage import EditColorImage
+from screens.mpegAudioCommand import MpegAudioCommand
 from screens.mpegCommand import MpegCommand
 
 
@@ -489,7 +490,7 @@ class ScreenAlbum(Screen):
             self.encodingthread = threading.Thread(target=self.encode_process)
             self.encodingthread.start()
 
-    def get_ffmpeg_audio_command(self, video_input_folder, video_input_filename, audio_input_folder, audio_input_filename, output_file_folder, encoding_settings=None, start=None):
+    '''def get_ffmpeg_audio_command(self, video_input_folder, video_input_filename, audio_input_folder, audio_input_filename, output_file_folder, encoding_settings=None, start=None):
         if not encoding_settings:
             encoding_settings = self.encoding_settings
         if encoding_settings['file_format'].lower() == 'auto':
@@ -514,7 +515,7 @@ class ScreenAlbum(Screen):
         audio_codec_settings = "-c:a " + audio_codec + " -strict -2"
 
         command = 'ffmpeg -i "'+video_file+'"'+seek+' -i "'+audio_file+'" -map 0:v -map 1:a -codec copy '+audio_codec_settings+' '+audio_bitrate_settings+' -shortest "'+output_file+'"'
-        return [True, command, output_filename]
+        return [True, command, output_filename]'''
 
 
     def encode_process(self):
@@ -1751,7 +1752,18 @@ class ScreenAlbum(Screen):
 
         if exit_code == 0:
             #encoding first file completed, add audio
-            command_valid, command, output_temp_filename = self.get_ffmpeg_audio_command(output_file_folder, output_filename, input_file_folder, input_filename, output_file_folder, encoding_settings=encoding_settings, start=start_seconds)
+            mpegAudioCommand = MpegAudioCommand()
+
+            mpegAudioCommand.set_video_input_folder(output_file_folder)
+            mpegAudioCommand.set_video_input_filename(output_filename)
+            mpegAudioCommand.set_audio_input_folder(input_file_folder)
+            mpegAudioCommand.set_audio_input_filename(input_filename)
+            mpegAudioCommand.set_output_file_folder(output_file_folder)
+            mpegAudioCommand.set_encoding_settings(encoding_settings)
+            mpegAudioCommand.set_start(start_seconds)
+            command_valid, command, output_temp_filename = mpegAudioCommand.mpeg_audio_command()
+
+            #command_valid, command, output_temp_filename = self.get_ffmpeg_audio_command(output_file_folder, output_filename, input_file_folder, input_filename, output_file_folder, encoding_settings=encoding_settings, start=start_seconds)
             output_temp_file = output_file_folder + os.path.sep + output_temp_filename
 
             print(command)

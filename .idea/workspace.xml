@@ -20,9 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18f69a3-776f-4dd6-998c-4d459ba95fe2" name="Default Changelist" comment="update ignore file">
-      <change afterPath="$PROJECT_DIR$/screens/imageCollage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screens/mpegAudioCommand.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/screencollage.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/screencollage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/screenAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/screenAlbum.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -700,10 +700,10 @@
     <state x="467" y="198" width="676" height="528" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@0.23.1440.877" timestamp="1588177978520" />
     <state x="2063" y="-42" width="673" height="708" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@1440.-277.1920.1177" timestamp="1588168006831" />
     <state x="2083" y="-200" width="902" height="709" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-47.1600.877@1440.-277.1920.1177" timestamp="1588798888464" />
-    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup" timestamp="1594525369969">
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup" timestamp="1594568471983">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594525369969" />
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1594568471983" />
     <state x="1206" y="-913" width="670" height="676" key="search.everywhere.popup/0.22.1440.878/-1019.-878.1600.878/581.-1178.1920.1178@581.-1178.1920.1178" timestamp="1586370374138" />
   </component>
   <component name="XDebuggerManager">
@@ -736,17 +736,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>800</line>
+          <line>801</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1267</line>
+          <line>1268</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1547</line>
+          <line>1548</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -761,7 +761,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1591</line>
+          <line>1592</line>
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -841,7 +841,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>994</line>
+          <line>995</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -896,27 +896,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>793</line>
+          <line>794</line>
           <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1845</line>
+          <line>1857</line>
           <option name="timeStamp" value="204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1883</line>
+          <line>1895</line>
           <option name="timeStamp" value="205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1944</line>
+          <line>1956</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1955</line>
+          <line>1967</line>
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1066,22 +1066,22 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1420</line>
+          <line>1421</line>
           <option name="timeStamp" value="555" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1434</line>
+          <line>1435</line>
           <option name="timeStamp" value="556" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1422</line>
+          <line>1423</line>
           <option name="timeStamp" value="559" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1513</line>
+          <line>1514</line>
           <option name="timeStamp" value="567" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1096,7 +1096,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1129</line>
+          <line>1130</line>
           <option name="timeStamp" value="574" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1106,7 +1106,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1131</line>
+          <line>1132</line>
           <option name="timeStamp" value="593" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1116,7 +1116,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>786</line>
+          <line>787</line>
           <option name="timeStamp" value="596" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
