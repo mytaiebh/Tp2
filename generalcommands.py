@@ -148,7 +148,7 @@ def format_size(size):
         return str(round(size, 2))+' Bytes'
 
 
-def interpolate(start, stop, length, minimum, maximum, before=None, before_distance=1, after=None, after_distance=1, mode='linear'):
+'''def interpolate(start, stop, length, minimum, maximum, before=None, before_distance=1, after=None, after_distance=1, mode='linear'):
     """Returns a list of a given length, of float values interpolated between two given values.
     Arguments:
         start: Starting Y value.
@@ -219,7 +219,7 @@ def interpolate(start, stop, length, minimum, maximum, before=None, before_dista
             y = maximum
         if y < minimum:
             y = minimum
-    return values
+    return values'''
 
 
 def isfile2(path):
