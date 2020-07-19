@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18f69a3-776f-4dd6-998c-4d459ba95fe2" name="Default Changelist" comment="update ignore file">
-      <change afterPath="$PROJECT_DIR$/generalElements/factoryGeneralElements.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/screens/intermediaire.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenAlbum/factorySecrenAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/screenAlbum/factorySecrenAlbum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/screenAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/screenAlbum.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -479,7 +480,7 @@
       <workItem from="1588795730526" duration="3179000" />
       <workItem from="1594770617900" duration="626000" />
       <workItem from="1594907829707" duration="761000" />
-      <workItem from="1595098788612" duration="19134000" />
+      <workItem from="1595098788612" duration="20655000" />
     </task>
     <task id="LOCAL-00001" summary="update ignore file">
       <created>1588177324193</created>
@@ -700,17 +701,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>806</line>
+          <line>807</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1286</line>
+          <line>1287</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1589</line>
+          <line>1590</line>
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -800,7 +801,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1006</line>
+          <line>1007</line>
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -855,17 +856,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>799</line>
+          <line>800</line>
           <option name="timeStamp" value="202" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1910</line>
+          <line>1911</line>
           <option name="timeStamp" value="204" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1948</line>
+          <line>1949</line>
           <option name="timeStamp" value="205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1015,17 +1016,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1461</line>
+          <line>1462</line>
           <option name="timeStamp" value="555" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1475</line>
+          <line>1476</line>
           <option name="timeStamp" value="556" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>1463</line>
+          <line>1464</line>
           <option name="timeStamp" value="559" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -1050,7 +1051,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/screens/screenAlbum.py</url>
-          <line>792</line>
+          <line>793</line>
           <option name="timeStamp" value="596" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">

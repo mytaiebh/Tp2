@@ -15,7 +15,8 @@
 # from screenAlbum.editBorderImage import EditBorderImage
 # from screenAlbum.editColorImage import EditColorImage
 from factoryGeneralElements import FactoryGeneralElements
-from screenAlbum.factorySecrenAlbum import FactoryScreenAlbum, FactoryTest
+#from screenAlbum.factorySecrenAlbum import FactoryScreenAlbum, FactoryTest
+from screens.intermediaire import Intermediaire
 from screens.mpegAudioCommand import MpegAudioCommand
 from screens.mpegCommand import MpegCommand
 
@@ -322,8 +323,8 @@ Builder.load_string("""
 
 
 class ScreenAlbum(Screen):
-    makeScreenAlbum = FactoryTest.creerFactorY()
-    makeGeneralElement= FactoryGeneralElements()
+    factory = Intermediaire()
+    #makeGeneralElement= FactoryGeneralElements()
     """Screen layout of the album viewer."""
     view_panel = StringProperty('')
     sort_reverse_button = StringProperty('normal')
@@ -483,7 +484,7 @@ class ScreenAlbum(Screen):
 
             # Create popup to show progress
             self.cancel_encoding = False
-            self.popup = self.makeScreenAlbum.\
+            self.popup = self.factory.\
                 makeScanningPopup(title='Converting Video', auto_dismiss=False, size_hint=(None, None),
                                        size=(app.popup_x, app.button_scale * 4))
             self.popup.scanning_text = ''
@@ -963,19 +964,19 @@ class ScreenAlbum(Screen):
         """Creates a delete confirmation popup and opens it."""
 
         if self.type == 'Album':
-            content = self.makeGeneralElement.\
+            content = self.factory.\
                 makeConfirmPopup(text='Remove This Photo From The Album "'+
                                         self.target+'"?',
                                    yes_text='Remove', no_text="Don't Remove", warn_yes=True)
         elif self.type == 'Tag':
-            content = self.makeGeneralElement.\
+            content = self.factory.\
                 makeConfirmPopup(text='Remove The Tag "'+self.target+'" From Selected Photo?', yes_text='Remove', no_text="Don't Remove", warn_yes=True)
         else:
-            content = self.makeGeneralElement.\
+            content = self.factory.\
                 makeConfirmPopup(text='Delete The Selected File?', yes_text='Delete', no_text="Don't Delete", warn_yes=True)
         app = App.get_running_app()
         content.bind(on_answer=self.delete_selected_answer)
-        self.popup = self.makeScreenAlbum.\
+        self.popup = self.factory.\
             makeNormalPopup(title='Confirm Delete', content=content, size_hint=(None, None), size=(app.popup_x, app.button_scale * 4), auto_dismiss=False)
         self.popup.open()
 
@@ -1080,20 +1081,20 @@ class ScreenAlbum(Screen):
             else:
                 self.favorite = False
             for tag in tags:
-                    display_tags.add_widget(self.makeGeneralElement.
+                    display_tags.add_widget(self.factory.
                                             makeNormalLabel(text=tag.name, size_hint_x=1))
-                    display_tags.add_widget(self.makeScreenAlbum.
+                    display_tags.add_widget(self.factory.
                                             makeRemoveFromTagButton(to_remove=tag.name, remove_from=photo.new_full_filename(), owner=self))
 
         tag_list = self.ids['panelTags']
         tag_list.clear_widgets()
-        tag_list.add_widget(self.makeScreenAlbum.
+        tag_list.add_widget(self.factory.
                             makeTagSelectButton(type='Tag', text='favorite', target='favorite', owner=self))
-        tag_list.add_widget(self.makeGeneralElement.makeShortLabel())
+        tag_list.add_widget(self.factory.makeShortLabel())
         for tag in app.session.query(Tag).order_by(Tag.name):
-            tag_list.add_widget(self.makeScreenAlbum.
+            tag_list.add_widget(self.factory.
                                 makeTagSelectButton(type='Tag', text=tag.name, target=str(tag.id), owner=self))
-            tag_list.add_widget(self.makeScreenAlbum.
+            tag_list.add_widget(self.factory.
                                 makeRemoveTagButton(to_remove=tag.name, owner=self))
 
     def fullscreen(self):
@@ -1144,7 +1145,7 @@ class ScreenAlbum(Screen):
                 print_button.disabled = False
             if not self.photo:
                 self.photo = 'data/null.jpg'
-            self.viewer = self.makeScreenAlbum.\
+            self.viewer = self.factory.\
                 makePhotoViewer(favorite=self.favorite, angle=self.angle, mirror=self.mirror, photo_id=str(self.photoinfo.id), file=self.photoinfo.new_full_filename(),photoinfo=self.photoinfo.dict())
             container.add_widget(self.viewer)
             self.refresh_photoinfo_simple()
@@ -1157,7 +1158,7 @@ class ScreenAlbum(Screen):
                 print_button.disabled = True
             if not self.photo:
                 self.photo = 'data/null.jpg'
-            self.viewer = self.makeScreenAlbum.\
+            self.viewer = self.factory.\
                 makeVideoViewer(favorite=self.favorite, angle=self.angle, mirror=self.mirror, file=self.photoinfo.new_full_filename(), photoinfo=self.photoinfo.dict())
             container.add_widget(self.viewer)
             self.refresh_photoinfo_simple()
@@ -1303,26 +1304,26 @@ class ScreenAlbum(Screen):
             return
         full_filename = os.path.join(photoinfo[2], photoinfo[0])
         filename = os.path.basename(photoinfo[0])
-        self.makeScreenAlbum.makeTreeViewInfo
-        info_panel.add_node(self.makeScreenAlbum.
+        self.factory.makeTreeViewInfo
+        info_panel.add_node(self.factory.
                             makeTreeViewInfo(title='Filename: ' + filename))
         path = os.path.join(photoinfo[2], photoinfo[1])
-        info_panel.add_node(self.makeScreenAlbum.
+        info_panel.add_node(self.factory.
                             makeTreeViewInfo(title='Path: ' + path))
         database_folder = photoinfo[2]
-        info_panel.add_node(self.makeScreenAlbum.
+        info_panel.add_node(self.factory.
                             makeTreeViewInfo(title='Database: ' + database_folder))
         import_date = datetime.datetime.fromtimestamp(photoinfo[6]).strftime('%Y-%m-%d, %I:%M%p')
-        info_panel.add_node(self.makeScreenAlbum.
+        info_panel.add_node(self.factory.
                             makeTreeViewInfo(title='Import Date: ' + import_date))
         modified_date = datetime.datetime.fromtimestamp(photoinfo[7]).strftime('%Y-%m-%d, %I:%M%p')
-        info_panel.add_node(self.makeScreenAlbum.
+        info_panel.add_node(self.factory.
                             makeTreeViewInfo(title='Modified Date: ' + modified_date))
         if os.path.exists(full_filename):
             file_size = format_size(int(os.path.getsize(full_filename)))
         else:
             file_size = format_size(photoinfo[4])
-        info_panel.add_node(self.makeScreenAlbum.
+        info_panel.add_node(self.factory.
                             makeTreeViewInfo(title='File Size: ' + file_size))
 
     def refresh_photoinfo_full(self, video=None):
@@ -1335,12 +1336,12 @@ class ScreenAlbum(Screen):
         if not self.view_image:
             if video:
                 length = time_index(video.duration)
-                info_panel.add_node(self.makeScreenAlbum.
+                info_panel.add_node(self.factory.
                                     makeTreeViewInfo(title='Duration: ' + length))
                 self.image_x, self.image_y = video.texture.size
                 resolution = str(self.image_x) + ' * ' + str(self.image_y)
                 megapixels = round(((self.image_x * self.image_y) / 1000000), 2)
-                info_panel.add_node(self.makeScreenAlbum.
+                info_panel.add_node(self.factory.
                                     makeTreeViewInfo(title='Resolution: ' + str(megapixels) + 'MP (' + resolution + ')'))
         else:
             #Add resolution info
@@ -1370,7 +1371,7 @@ class ScreenAlbum(Screen):
                 self.viewer.scale_max = scale_max
                 resolution = str(self.image_x) + ' * ' + str(self.image_y)
                 megapixels = round(((self.image_x * self.image_y) / 1000000), 2)
-                info_panel.add_node(self.makeScreenAlbum.
+                info_panel.add_node(self.factory.
                                     makeTreeViewInfo(title='Resolution: ' + str(megapixels) + 'MP (' + resolution + ')'))
             else:
                 self.image_x = 0
@@ -1380,42 +1381,42 @@ class ScreenAlbum(Screen):
             if exif:
                 if 271 in exif:
                     camera_type = exif[271]+' '+exif[272]
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Camera: ' + camera_type))
                 if 33432 in exif:
                     copyright = exif[33432]
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Copyright: ' + copyright))
                 if 36867 in exif:
                     camera_date = exif[36867]
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Date Taken: ' + camera_date))
                 if 33434 in exif:
                     exposure = exif[33434]
                     camera_exposure = str(exposure[0]/exposure[1])+'seconds'
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Exposure Time: ' + camera_exposure))
                 if 37377 in exif:
                     camera_shutter_speed = str(exif[37377][0]/exif[37377][1])
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Shutter Speed: ' + camera_shutter_speed))
                 if 33437 in exif:
                     f_stop = exif[33437]
                     camera_f = str(f_stop[0]/f_stop[1])
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='F Stop: ' + camera_f))
                 if 37378 in exif:
                     camera_aperture = str(exif[37378][0]/exif[37378][0])
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Aperture: ' + camera_aperture))
                 if 34855 in exif:
                     camera_iso = str(exif[34855])
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='ISO Level: ' + camera_iso))
                 if 37385 in exif:
                     flash = bin(exif[37385])[2:].zfill(8)
                     camera_flash = 'Not Used' if flash[1] == '0' else 'Used'
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Flash: ' + str(camera_flash)))
                 if 37386 in exif:
                     focal_length = str(exif[37386][0]/exif[37386][1])+'mm'
@@ -1423,13 +1424,13 @@ class ScreenAlbum(Screen):
                         film_focal = exif[41989]
                         if film_focal != 0:
                             focal_length = focal_length+' ('+str(film_focal)+' 35mm equiv.)'
-                    info_panel.add_node(self.makeScreenAlbum.
+                    info_panel.add_node(self.factory.
                                         makeTreeViewInfo(title='Focal Length: ' + focal_length))
                 if 41988 in exif:
                     digital_zoom = exif[41988]
                     if digital_zoom[0] != 0:
                         digital_zoom_amount = str(round(digital_zoom[0]/digital_zoom[1], 2))+'X'
-                        info_panel.add_node(self.makeScreenAlbum.
+                        info_panel.add_node(self.factory.
                                             makeTreeViewInfo(title='Digital Zoom: ' + digital_zoom_amount))
                 if 34850 in exif:
                     exposure_program = exif[34850]
@@ -1450,7 +1451,7 @@ class ScreenAlbum(Screen):
                             program_name = 'Portrait'
                         else:
                             program_name = 'Landscape'
-                        info_panel.add_node(self.makeScreenAlbum.
+                        info_panel.add_node(self.factory.
                                             makeTreeViewInfo(title='Exposure Mode: ' + program_name))
 
     def resort_method(self, method):
@@ -1542,7 +1543,7 @@ class ScreenAlbum(Screen):
         self.type = app.type
 
         #set up sort buttons
-        self.sort_dropdown =  self.makeGeneralElement.makeAlbumSortDropDown()
+        self.sort_dropdown =  self.factory.makeAlbumSortDropDown()
         #self.sort_dropdown = AlbumSortDropDown()
         self.sort_dropdown.bind(on_select=lambda instance, x: self.resort_method(x))
         self.sort_method = app.config.get('Sorting', 'album_sort')
@@ -1594,7 +1595,7 @@ class ScreenAlbum(Screen):
             self.viewer.edit_mode = self.edit_panel
             edit_panel_container = self.ids['panelEdit']
             if self.edit_panel == 'main':
-                self.edit_panel_object = self.makeScreenAlbum.\
+                self.edit_panel_object = self.factory.\
                     makeEditMain(owner=self)
                 self.edit_panel_object.update_programs()
                 self.viewer.bypass = False
@@ -1602,40 +1603,40 @@ class ScreenAlbum(Screen):
                 self.viewer.bypass = True
                 self.viewer.stop()
                 if self.edit_panel == 'color':
-                    self.edit_panel_object = self.makeScreenAlbum.\
+                    self.edit_panel_object = self.factory.\
                         makeEditColorImage(owner=self)
                     self.viewer.edit_image.bind(histogram=self.edit_panel_object.draw_histogram)
                 elif self.edit_panel == 'advanced':
-                    self.edit_panel_object = self.makeScreenAlbum.\
+                    self.edit_panel_object = self.factory.\
                         makeEditColorImageAdvanced(owner=self)
                     self.viewer.edit_image.bind(histogram=self.edit_panel_object.draw_histogram)
                 elif self.edit_panel == 'filter':
-                    self.edit_panel_object = self.makeScreenAlbum.\
+                    self.edit_panel_object = self.factory.\
                         makeEditFilterImage(owner=self)
                 elif self.edit_panel == 'border':
-                    self.edit_panel_object = self.makeScreenAlbum.makeEditBorderImage(owner=self)
+                    self.edit_panel_object = self.factory.makeEditBorderImage(owner=self)
                 elif self.edit_panel == 'denoise':
                     if opencv:
-                        self.edit_panel_object = self.makeScreenAlbum.\
+                        self.edit_panel_object = self.factory.\
                             makeEditDenoiseImage(owner=self, imagefile=self.photo, image_x=self.viewer.edit_image.original_width, image_y=self.viewer.edit_image.original_height)
                     else:
                         self.edit_panel = 'main'
                         app = App.get_running_app()
                         app.message("Could Not Denoise, OpenCV Not Found")
                 elif self.edit_panel == 'crop':
-                    self.edit_panel_object = self.makeScreenAlbum.\
+                    self.edit_panel_object = self.factory.\
                         makeEditCropImage(owner=self, image_x=self.viewer.edit_image.original_width,
                                                            image_y=self.viewer.edit_image.original_height)
                     self.viewer.edit_image.crop_controls = self.edit_panel_object
                 elif self.edit_panel == 'rotate':
-                    self.edit_panel_object = self.makeScreenAlbum.\
+                    self.edit_panel_object = self.factory.\
                         makeEditRotateImage(owner=self)
                 elif self.edit_panel == 'convert':
                     if self.view_image:
-                        self.edit_panel_object = self.makeScreenAlbum.\
+                        self.edit_panel_object = self.factory.\
                             makeEditConvertImage(owner=self)
                     else:
-                        self.edit_panel_object = self.makeScreenAlbum.\
+                        self.edit_panel_object = self.factory.\
                             makeEditConvertVideo(owner=self)
             edit_panel_container.change_panel(self.edit_panel_object)
         else:
@@ -1644,7 +1645,7 @@ class ScreenAlbum(Screen):
             self.viewer.edit_mode = self.edit_panel
             edit_panel_container = self.ids['panelEdit']
             edit_panel_container.change_panel(None)
-            self.edit_panel_object = self.makeScreenAlbum.\
+            self.edit_panel_object = self.factory.\
                 makeEditNone(owner=self)
 
     def save_edit(self):
@@ -1670,7 +1671,7 @@ class ScreenAlbum(Screen):
 
         # Create popup to show progress
         self.cancel_encoding = False
-        self.popup = self.makeGeneralElement.\
+        self.popup = self.factory.\
             makeScanningPopup(title='Processing Video', auto_dismiss=False, size_hint=(None, None), size=(app.popup_x, app.button_scale * 4))
         self.popup.scanning_text = ''
         self.popup.open()

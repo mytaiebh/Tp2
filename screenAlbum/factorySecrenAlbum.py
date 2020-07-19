@@ -57,12 +57,6 @@ class FactoryScreenAlbum():
         return EditConvertImage(owner=owner)
     def makeEditColorImageAdvanced(self,owner):
         return EditColorImageAdvanced(owner=owner)
-
-class FactoryTest():
-    @staticmethod
-    def creerFactorY():
-        return FactoryScreenAlbum()
-
 #class FactoryScreenAlbumInterface(FactoryScreenAlbumInterface):
 
 
