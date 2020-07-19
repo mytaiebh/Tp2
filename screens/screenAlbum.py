@@ -14,6 +14,7 @@
 # from screenAlbum.VideoViewer import VideoViewer
 # from screenAlbum.editBorderImage import EditBorderImage
 # from screenAlbum.editColorImage import EditColorImage
+from factoryGeneralElements import FactoryGeneralElements
 from screenAlbum.factorySecrenAlbum import FactoryScreenAlbum, FactoryTest
 from screens.mpegAudioCommand import MpegAudioCommand
 from screens.mpegCommand import MpegCommand
@@ -51,12 +52,12 @@ from kivy.core.image.img_pil import ImageLoaderPIL
 from kivy.loader import Loader
 
 from generalcommands import agnostic_path, local_path, time_index, format_size, to_bool, isfile2
-from generalElements.labels.NormalLabel import NormalLabel
-from generalElements.labels.ShortLabel import ShortLabel
-from generalElements.popups.ScanningPopup import ScanningPopup
-from generalElements.popups.NormalPopup import NormalPopup
-from generalElements.popups.ConfirmPopup import ConfirmPopup
-from generalElements.dropDowns.AlbumSortDropDown import AlbumSortDropDown
+#from generalElements.labels.NormalLabel import NormalLabel
+#from generalElements.labels.ShortLabel import ShortLabel
+#from generalElements.popups.ScanningPopup import ScanningPopup
+#from generalElements.popups.NormalPopup import NormalPopup
+#from generalElements.popups.ConfirmPopup import ConfirmPopup
+#from generalElements.dropDowns.AlbumSortDropDown import AlbumSortDropDown
 from generalconstants import *
 from screenAlbum.treeViewInfo import TreeViewInfo
 from kivy.lang.builder import Builder
@@ -322,6 +323,7 @@ Builder.load_string("""
 
 class ScreenAlbum(Screen):
     makeScreenAlbum = FactoryTest.creerFactorY()
+    makeGeneralElement= FactoryGeneralElements()
     """Screen layout of the album viewer."""
     view_panel = StringProperty('')
     sort_reverse_button = StringProperty('normal')
@@ -481,7 +483,9 @@ class ScreenAlbum(Screen):
 
             # Create popup to show progress
             self.cancel_encoding = False
-            self.popup = ScanningPopup(title='Converting Video', auto_dismiss=False, size_hint=(None, None), size=(app.popup_x, app.button_scale * 4))
+            self.popup = self.makeScreenAlbum.\
+                makeScanningPopup(title='Converting Video', auto_dismiss=False, size_hint=(None, None),
+                                       size=(app.popup_x, app.button_scale * 4))
             self.popup.scanning_text = ''
             self.popup.open()
             encoding_button = self.popup.ids['scanningButton']
@@ -959,14 +963,20 @@ class ScreenAlbum(Screen):
         """Creates a delete confirmation popup and opens it."""
 
         if self.type == 'Album':
-            content = ConfirmPopup(text='Remove This Photo From The Album "'+self.target+'"?', yes_text='Remove', no_text="Don't Remove", warn_yes=True)
+            content = self.makeGeneralElement.\
+                makeConfirmPopup(text='Remove This Photo From The Album "'+
+                                        self.target+'"?',
+                                   yes_text='Remove', no_text="Don't Remove", warn_yes=True)
         elif self.type == 'Tag':
-            content = ConfirmPopup(text='Remove The Tag "'+self.target+'" From Selected Photo?', yes_text='Remove', no_text="Don't Remove", warn_yes=True)
+            content = self.makeGeneralElement.\
+                makeConfirmPopup(text='Remove The Tag "'+self.target+'" From Selected Photo?', yes_text='Remove', no_text="Don't Remove", warn_yes=True)
         else:
-            content = ConfirmPopup(text='Delete The Selected File?', yes_text='Delete', no_text="Don't Delete", warn_yes=True)
+            content = self.makeGeneralElement.\
+                makeConfirmPopup(text='Delete The Selected File?', yes_text='Delete', no_text="Don't Delete", warn_yes=True)
         app = App.get_running_app()
         content.bind(on_answer=self.delete_selected_answer)
-        self.popup = NormalPopup(title='Confirm Delete', content=content, size_hint=(None, None), size=(app.popup_x, app.button_scale * 4), auto_dismiss=False)
+        self.popup = self.makeScreenAlbum.\
+            makeNormalPopup(title='Confirm Delete', content=content, size_hint=(None, None), size=(app.popup_x, app.button_scale * 4), auto_dismiss=False)
         self.popup.open()
 
     def delete_selected_answer(self, instance, answer):
@@ -1070,7 +1080,8 @@ class ScreenAlbum(Screen):
             else:
                 self.favorite = False
             for tag in tags:
-                    display_tags.add_widget(NormalLabel(text=tag.name, size_hint_x=1))
+                    display_tags.add_widget(self.makeGeneralElement.
+                                            makeNormalLabel(text=tag.name, size_hint_x=1))
                     display_tags.add_widget(self.makeScreenAlbum.
                                             makeRemoveFromTagButton(to_remove=tag.name, remove_from=photo.new_full_filename(), owner=self))
 
@@ -1078,7 +1089,7 @@ class ScreenAlbum(Screen):
         tag_list.clear_widgets()
         tag_list.add_widget(self.makeScreenAlbum.
                             makeTagSelectButton(type='Tag', text='favorite', target='favorite', owner=self))
-        tag_list.add_widget(ShortLabel())
+        tag_list.add_widget(self.makeGeneralElement.makeShortLabel())
         for tag in app.session.query(Tag).order_by(Tag.name):
             tag_list.add_widget(self.makeScreenAlbum.
                                 makeTagSelectButton(type='Tag', text=tag.name, target=str(tag.id), owner=self))
@@ -1531,7 +1542,8 @@ class ScreenAlbum(Screen):
         self.type = app.type
 
         #set up sort buttons
-        self.sort_dropdown = AlbumSortDropDown()
+        self.sort_dropdown =  self.makeGeneralElement.makeAlbumSortDropDown()
+        #self.sort_dropdown = AlbumSortDropDown()
         self.sort_dropdown.bind(on_select=lambda instance, x: self.resort_method(x))
         self.sort_method = app.config.get('Sorting', 'album_sort')
         self.sort_reverse = to_bool(app.config.get('Sorting', 'album_sort_reverse'))
@@ -1658,7 +1670,8 @@ class ScreenAlbum(Screen):
 
         # Create popup to show progress
         self.cancel_encoding = False
-        self.popup = ScanningPopup(title='Processing Video', auto_dismiss=False, size_hint=(None, None), size=(app.popup_x, app.button_scale * 4))
+        self.popup = self.makeGeneralElement.\
+            makeScanningPopup(title='Processing Video', auto_dismiss=False, size_hint=(None, None), size=(app.popup_x, app.button_scale * 4))
         self.popup.scanning_text = ''
         self.popup.open()
         encoding_button = self.popup.ids['scanningButton']
