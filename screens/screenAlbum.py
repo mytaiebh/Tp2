@@ -14,7 +14,7 @@
 # from screenAlbum.VideoViewer import VideoViewer
 # from screenAlbum.editBorderImage import EditBorderImage
 # from screenAlbum.editColorImage import EditColorImage
-from screenAlbum.factorySecrenAlbum import FactoryScreenAlbum
+from screenAlbum.factorySecrenAlbum import FactoryScreenAlbum, FactoryTest
 from screens.mpegAudioCommand import MpegAudioCommand
 from screens.mpegCommand import MpegCommand
 
@@ -321,7 +321,7 @@ Builder.load_string("""
 
 
 class ScreenAlbum(Screen):
-    makeScreenAlbum = FactoryScreenAlbum()
+    makeScreenAlbum = FactoryTest.creerFactorY()
     """Screen layout of the album viewer."""
     view_panel = StringProperty('')
     sort_reverse_button = StringProperty('normal')

@@ -58,6 +58,11 @@ class FactoryScreenAlbum():
     def makeEditColorImageAdvanced(self,owner):
         return EditColorImageAdvanced(owner=owner)
 
+class FactoryTest():
+    @staticmethod
+    def creerFactorY():
+        return FactoryScreenAlbum()
+
 #class FactoryScreenAlbumInterface(FactoryScreenAlbumInterface):
 
 

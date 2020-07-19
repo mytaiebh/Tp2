@@ -20,11 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c18f69a3-776f-4dd6-998c-4d459ba95fe2" name="Default Changelist" comment="update ignore file">
-      <change afterPath="$PROJECT_DIR$/screenAlbum/factorySecrenAlbum.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gomp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gomp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenAlbum/factorySecrenAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/screenAlbum/factorySecrenAlbum.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/screenAlbum.py" beforeDir="false" afterPath="$PROJECT_DIR$/screens/screenAlbum.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,6 +131,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="js-jscs-nodeInterpreter" value="$USER_HOME$/.nvm/versions/node/v8.4.0/bin/node" />
@@ -530,7 +528,7 @@
       <workItem from="1588795730526" duration="3179000" />
       <workItem from="1594770617900" duration="626000" />
       <workItem from="1594907829707" duration="761000" />
-      <workItem from="1595098788612" duration="14838000" />
+      <workItem from="1595098788612" duration="16344000" />
     </task>
     <task id="LOCAL-00001" summary="update ignore file">
       <created>1588177324193</created>
@@ -716,10 +714,10 @@
     <state x="467" y="198" width="676" height="528" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@0.23.1440.877" timestamp="1588177978520" />
     <state x="2063" y="-42" width="673" height="708" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-46.1600.877@1440.-277.1920.1177" timestamp="1588168006831" />
     <state x="2083" y="-200" width="902" height="709" key="find.popup/1440.-277.1920.1177/0.23.1440.877/-1600.-47.1600.877@1440.-277.1920.1177" timestamp="1588798888464" />
-    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup" timestamp="1595102697775">
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup" timestamp="1595119087623">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1595102697775" />
+    <state x="445" y="164" width="672" height="418" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1595119087623" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
